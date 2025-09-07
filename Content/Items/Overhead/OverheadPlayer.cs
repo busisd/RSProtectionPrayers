@@ -1,5 +1,7 @@
 using System;
+using Terraria;
 using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -66,5 +68,28 @@ namespace RSProtectionPrayers.Content.Items.Overhead
 			previousActiveOverhead = activeOverhead;
 			base.PostUpdate();
 		}
+
+    public override bool FreeDodge(Player.HurtInfo info)
+    {
+			Entity damageSource;
+			info.DamageSource.TryGetCausingEntity(out damageSource);
+			if (damageSource == null)
+			{
+				return false;
+			}
+
+			switch (activeOverhead)
+			{
+				case ActiveOverhead.Melee:
+					return damageSource is NPC && (damageSource as NPC).aiStyle != 9;
+				case ActiveOverhead.Missiles:
+					return damageSource is Projectile;
+				case ActiveOverhead.Magic:
+					return damageSource is NPC && (damageSource as NPC).aiStyle == 9;
+				case ActiveOverhead.None:
+				default:
+					return base.FreeDodge(info);
+			}
+    }
 	}
 }
