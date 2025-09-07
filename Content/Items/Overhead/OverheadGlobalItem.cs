@@ -3,11 +3,7 @@ using Terraria.ModLoader;
 
 namespace RSProtectionPrayers.Content.Items.Overhead
 {
-	// Note: To fully understand this example, please start by reading https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod/Common/CustomVisualEquipType/README.md
-
-	/// <summary>
-	/// OverheadGlobalItem applies the custom overhead EquipType values of the accessory items and the corresponding dye/shader items to the player.
-	/// </summary>
+	// See: https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod/Common/CustomVisualEquipType/README.md
 	public class OverheadGlobalItem : GlobalItem
 	{
 		public override void UpdateVisibleAccessory(Item item, Player player, bool hideVisual) {

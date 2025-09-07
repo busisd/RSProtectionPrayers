@@ -11,6 +11,7 @@ namespace RSProtectionPrayers.Content.Items.Overhead
 		public override void SetDefaults()
 		{
 			Item.SetNameOverride("Protect from Magic");
+			Item.rare = ItemRarityID.Orange;
 			Item.DefaultToAccessory(30, 30);
 		}
 
@@ -18,6 +19,7 @@ namespace RSProtectionPrayers.Content.Items.Overhead
 		{
 			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.Bone, 99);
+			recipe.AddTile(TileID.DemonAltar);
 			recipe.Register();
 		}
 
@@ -28,7 +30,7 @@ namespace RSProtectionPrayers.Content.Items.Overhead
 		
 		public override void UpdateEquip(Player player)
     {
-    	player.GetModPlayer<OverheadPlayer>().activeOverhead = ActiveOverhead.Magic;
+    	player.GetModPlayer<OverheadPlayer>().activeOverhead = RSProtectionPrayers.ActiveOverhead.Magic;
       base.UpdateEquip(player);
     }
 	}

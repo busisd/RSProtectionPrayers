@@ -1,1 +1,9 @@
-This description will show up on the steam page, check out https://steamcommunity.com/comment/Guide/formattinghelp.
+[h1] Protection Prayers [/h1]
+
+[h3] What is this? [/h3]
+
+A small mod to add the overhead protection prayers from RuneScape to the game as accessories.
+
+Each one is crafted with 99 bones at a demon altar, and protects from attacks of the corresponding type.
+
+Note that this mod is not meant to be balanced, it's just for fun.

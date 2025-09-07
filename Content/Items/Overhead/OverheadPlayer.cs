@@ -4,30 +4,18 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static RSProtectionPrayers.RSProtectionPrayers;
 
 namespace RSProtectionPrayers.Content.Items.Overhead
 {
-	// Note: To fully understand this example, please start by reading https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod/Common/CustomVisualEquipType/README.md
-
-  public enum ActiveOverhead
-  {
-    None,
-    Melee,
-    Missiles,
-    Magic
-  }
+	// See: https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod/Common/CustomVisualEquipType/README.md
 
 	/// <summary>
 	/// OverheadPlayer stores which overhead will be drawn, and with which dye/shader.
+	/// Also handles logic for preventing damage with proper overhead active.
 	/// </summary>
 	public class OverheadPlayer : ModPlayer
 	{
-		SoundStyle CancelPrayerSound = new SoundStyle("RSProtectionPrayers/Content/Items/Overhead/Sounds/CancelPrayerSound");
-		SoundStyle ProtectMeleeSound = new SoundStyle("RSProtectionPrayers/Content/Items/Overhead/Sounds/ProtectMeleeSound");
-		SoundStyle ProtectMissilesSound = new SoundStyle("RSProtectionPrayers/Content/Items/Overhead/Sounds/ProtectMissilesSound");
-		SoundStyle ProtectMagicSound = new SoundStyle("RSProtectionPrayers/Content/Items/Overhead/Sounds/ProtectMagicSound");
-
-
 		// The overhead item type.
 		public int overhead;
 		// The dye/shader used to draw the overhead.

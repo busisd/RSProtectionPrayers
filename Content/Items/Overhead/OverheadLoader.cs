@@ -7,14 +7,10 @@ using Terraria.ModLoader;
 
 namespace RSProtectionPrayers.Content.Items.Overhead
 {
-	// Note: To fully understand this example, please start by reading https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod/Common/CustomVisualEquipType/README.md
-
-	/// <summary>
-	/// OverheadLoader manages loading overhead equipment textures for each item using this custom EquipType. 
-	/// </summary>
+	// See: https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod/Common/CustomVisualEquipType/README.md
 	public class OverheadLoader : ModSystem
 	{
-		/// <summary> Maps an item type to it's corresponding overhead equipment texture. </summary>
+		/// <summary> Maps an item type to its corresponding overhead equipment texture. </summary>
 		internal static readonly Dictionary<int, Asset<Texture2D>> overheadItemToTexture = new();
 
 		public override void ResizeArrays() {
